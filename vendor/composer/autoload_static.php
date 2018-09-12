@@ -9,11 +9,16 @@ class ComposerStaticInitde01efa6a1680acf66fcb1f0943f6d9f
     public static $prefixLengthsPsr4 = array (
         'J' => 
         array (
+            'JokeORama\\Controllers\\' => 22,
             'JokeORama\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'JokeORama\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/controllers',
+        ),
         'JokeORama\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',

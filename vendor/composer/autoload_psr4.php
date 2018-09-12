@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'JokeORama\\Controllers\\' => array($baseDir . '/src/controllers'),
     'JokeORama\\' => array($baseDir . '/src'),
 );
