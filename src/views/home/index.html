@@ -1,0 +1,20 @@
+<?php include '../src/views/layout/header.html' ?>
+    <div class="container">
+      <h1>Welcome to Joe-O-Rama! Here is a joke!</h1>
+    </div>
+
+    <div class="container bg-info">
+        <p class="lead"></p>
+    </div><!-- /.container -->
+    <script>
+      //Let's get a joke the ajaxian way from our jokes api
+      $(function() {
+        $.ajax({
+          url: "/api/jokes?count=1&random=1", 
+          success: function(result){
+            //console.log(result[0].body);
+            $(".container .lead").html(result[0].body);
+          }});
+      });
+    </script>
+<?php include '../src/views/layout/footer.html' ?>
