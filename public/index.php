@@ -26,7 +26,6 @@ $routes = array(
 	'api' => new JokeAPIController($request_action),
 );
 
-
 // Create routes and dispatch
 if($_SERVER['REQUEST_METHOD'] === 'GET') {
 	$route = new Route($routes);
