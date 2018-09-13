@@ -15,9 +15,9 @@ class Route {
 		$this->_urls[$identifier] = $obj;
 	}
 
-	public function dispatch(string $destination, string $action = NULL): void {
-		$destination = $destination ?? '';
-		$action = $action ?? 'index';
+	public function dispatch(Request $request): void {
+		$destination = $request->get_destination() ?? '';
+		$action = $request->get_action() ?? 'index';
 
 		if (
 			isset($this->_urls[$destination]) 
