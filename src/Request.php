@@ -8,9 +8,11 @@ class Request {
 	private $_parameters_qs; //Query string parameter string (post ?)
 	private $_request_method;
 	private $_destination; //Primary action (controller)
+	private $_request_verb;
 
-	function __construct(string $uri) {
+	function __construct(string $uri, string $request_verb) {
 		$this->_uri = $uri;
+		$this->_request_verb = $request_verb;
 		$parsed_uri = parse_url($uri);
 		$request_uri_array = explode('/', trim($parsed_uri['path'], '/'));
 		$this->_destination = $request_uri_array[0] !== '' ? $request_uri_array[0] : '/';
