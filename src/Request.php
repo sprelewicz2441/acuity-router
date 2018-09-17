@@ -27,4 +27,8 @@ class Request {
 		return $this->_action ?? NULL;
 	}
 
+	function get_request_verb(): ?string {
+		return $this->_request_verb;
+	}
+
 }
