@@ -6,6 +6,8 @@ class Route {
 	private $_urls = array();
 	private $current_route;
 
+	const ERROR_PAGE_404_PATH = '../src/views/404.html';
+
 	function __construct(array $routes) {
 		$this->_urls = $routes;
 		$this->current_route = '';
@@ -27,7 +29,7 @@ class Route {
 			$this->current_route->$action();
 		} else {
 			http_response_code(404);
-			include '../src/views/404.html';
+			include self::ERROR_PAGE_404_PATH;
 		}
 	}
 }
